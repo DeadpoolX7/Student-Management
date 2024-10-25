@@ -31,8 +31,8 @@ const Login = () => {
 
   return (
     <>
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-sm">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-stone-700">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
         <div className="flex justify-between mb-4">
           <button
             className={`text-lg font-semibold px-4 py-2 rounded ${isTeacherLogin ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}

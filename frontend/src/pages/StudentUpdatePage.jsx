@@ -6,6 +6,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../component/Footer';
+import TeacherNavbar from '../component/TeacherNavbar';
 
 const UpdateStudent = () => {
   const { register, handleSubmit, setValue, reset } = useForm();
@@ -45,9 +46,12 @@ const UpdateStudent = () => {
 
   return (
     <>
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
+    <div className='min-h-screen bg-pink-300 flex flex-col'>
+
+      <TeacherNavbar />
+    <div className="flex-grow  m-5 py-8 items-center">
       <ToastContainer />
-      <div className="max-w-2xl w-full bg-white p-8 rounded-lg shadow-lg">
+      <div className="h-full max-w-2xl w-full bg-white p-8 rounded-lg shadow-lg">
         <h3 className="text-xl font-semibold mb-6 text-center">Update Student Info</h3>
 
         {/* Fetch Student by Roll Number */}
@@ -164,6 +168,8 @@ const UpdateStudent = () => {
       </div>
     </div>
     <Footer />
+    
+    </div>
     </>
   );
 };

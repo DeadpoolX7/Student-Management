@@ -4,6 +4,8 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'; // Tailwind's Heroic
 
 import { DarkModeToggle, LogoutButton } from './Button';
 
+import { Link, NavLink } from 'react-router-dom';
+
 const TeacherNavbar = () => {
   return (
     <>
@@ -18,24 +20,36 @@ const TeacherNavbar = () => {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8 pt-2">
                   {/* Regular Menu Items */}
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  <NavLink
+                    to='/'
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive ? 'bg-gray-700 text-white underline' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                      }`
+                    }
                   >
                     Home
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  </NavLink>
+                  <NavLink
+                    to='/sakshi/workspace'
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive ? 'bg-gray-700 text-white underline' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                      }`
+                    }
                   >
                     Add a Student
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  </NavLink>
+                  <NavLink
+                    to='/update-student'
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive ? 'bg-gray-700 text-white underline' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                      }`
+                    }
                   >
                     Update a student info
-                  </a>
+                  </NavLink>
                   <div className=''>
                     
             <LogoutButton />
@@ -63,25 +77,37 @@ const TeacherNavbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               {/* Mobile Menu Items */}
               <Disclosure.Button
-                as="a"
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                as={NavLink}
+                to="/"
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive ? 'bg-gray-700 text-white underline' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  }`
+                }
               >
                 Home
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                as= {NavLink}
+                to='/sakshi/workspace'
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive ? 'bg-gray-700 text-white underline' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  }`
+                }
               >
-                About
+                Add Student
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                as={NavLink}
+                to="/update-student"
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive ? 'bg-gray-700 text-white underline' : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                  }`
+                }
               >
-                Contact
+                Update student 
               </Disclosure.Button>
             <Disclosure>
               <LogoutButton />

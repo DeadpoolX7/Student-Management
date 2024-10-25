@@ -3,12 +3,14 @@ import ProfileImage from '../component/ProfileImage';
 import StudentInfo from '../component/StudentInfo';
 import EventsComponent from '../component/EventsComponent';
 import ErrorBoundary from '../error/ErrorBoundary';
+import Footer from '../component/Footer';
 
 const StudentDashboard = ({  }) => {
   return (
     //add error boundary
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-        <div className="w-full max-w-4xl bg-white p-6 rounded-lg shadow-lg relative">
+    <>
+      <div className="min-h-screen  bg-sky-400 flex flex-col justify-between items-center">
+        <div className="flex-grow flex flex-col justify-center items-center w-full max-w-4xl bg-white p-6 m-5 rounded-lg shadow-lg">
           {/* Welcome message */}
           <h1 className="text-2xl font-bold text-center animate-fadeIn mb-4">
             Welcome,
@@ -33,8 +35,9 @@ const StudentDashboard = ({  }) => {
             </div>
           </div>
         </div>
+        {/*Footer*/}
       </div>
-    
+    </>
   );
 };
 

@@ -23,8 +23,9 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center bg-gray-100">
-      <div className="max-w-md w-full mx-auto bg-white p-6 rounded-lg shadow-md">
+    <div className="min-h-screen flex flex-col justify-center bg-green-200">
+
+      <div className="max-w-md w-full mx-auto my-5 bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold text-center mb-6">Teacher Sign Up</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Name Field */}
@@ -131,7 +132,6 @@ const SignupPage = () => {
           </div>
         </form>
       </div>
-
       {/* Footer */}
     <Footer />
     </div>

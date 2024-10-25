@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import TeacherNavbar from '../component/TeacherNavbar';
 import Footer from '../component/Footer';
 import axios from 'axios';
-import { useContext } from 'react';
-import { DarkModeContext } from '../context/DarkModeContext';
+
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 const TeacherDashboard = () => {
 
-  const { isDarkMode } = useContext(DarkModeContext);
   const [roll, setRoll] = useState("");
   const [student, setStudent] = useState(null);
   const [studentCount, setStudentCount] = useState(0);
@@ -18,7 +16,7 @@ const TeacherDashboard = () => {
   // Fetch student by roll number
   const getStudentByRoll = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/get/${roll}`);
+      const response = await axios.get(`http://localhost:8080/student/get/${roll}`);
       console.log(response)
       setStudent(response.data);
       toast.success(`Student Roll: ${roll} is fetchd successfully.`)
@@ -56,8 +54,10 @@ const TeacherDashboard = () => {
 
   return (
     <>
+    <div className='min-h-screen bg-blue-300 flex flex-col'>
+
     <TeacherNavbar />
-    <div className="min-h-screen bg-blue-300 p-6">
+    <div className={`m-5 flex-grow`}>
       <ToastContainer />
     <main className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
         {/* Get Student by Roll */}
@@ -113,6 +113,8 @@ const TeacherDashboard = () => {
       </main>
     </div>
     <Footer />
+          
+    </div>
     </>
   );
 };

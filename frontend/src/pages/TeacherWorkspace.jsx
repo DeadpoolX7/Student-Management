@@ -52,8 +52,10 @@ const TeacherWorkspace = () => {
 
   return (
     <>
+    <div className='flex flex-col min-h-screen bg-amber-200'>
+
     <TeacherNavbar />
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-8">
+    <div className="min-h-screen  flex flex-col items-center py-8 mx-5">
       <ToastContainer />
       {/* Welcome Message */}
       <div className="mb-8 text-center">
@@ -181,6 +183,8 @@ const TeacherWorkspace = () => {
       </div>
     </div>
       <Footer />
+  
+      </div>
     </>
   );
 };
